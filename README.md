@@ -1,4 +1,4 @@
-# VoiceAI_math - 음성 기반 수학 도우미
+## VoiceAI_math - 음성 기반 수학 도우미
 
 음성으로 수학 개념을 질문하고 답변받는 AI 기반 음성 비서 입니다.
 음성으로 수학 개념을 질문하고, 답을 듣고, 필요한 경우 예시까지 음성으로 전달하는 AI 기반 수학 어시스턴트입니다.
@@ -15,20 +15,7 @@
 
 ### 🔄 전체 실행 흐름
 
-```mermaid
-flowchart TD
-    A["프로그램 실행<br/>python total_mic_speak_mcp.py<br/>if __name__ == '__main__'"] --> B["main()<br/>total_mic_speak_mcp.py"]
-    B --> C["record_audio_to_wav()<br/>voice.py / total_mic_speak_mcp.py"]
-    C --> D["call_transcribe()<br/>voice.py"]
-    D --> E["normalize_dialect()<br/>voice.py"]
-    E --> F{"input_guardrail()<br/>math_json/math.json"}
-    F -- 매칭됨 --> G["subject_meaning / example<br/>math.json 기반 응답"]
-    F -- 미매칭 --> H["call_chatgpt()<br/>chatgpt_conn.py"]
-    G --> I["call_tts()<br/>voice.py"]
-    H --> I
-    I --> J["play_mp3()<br/>voice.py"]
-    J --> K["종료"]
-```
+![VoiceAI_math 실행 흐름](assets/voiceai_flowchart.png)
 
 ### 📁 파일 단위 구조도
 
