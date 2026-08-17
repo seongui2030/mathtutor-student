@@ -1,0 +1,9 @@
+venv/
+.env
+__pycache__/
+*.pyc
+.venv/
+.mypy_cache/
+.pytest_cache/
+speech_*.wav
+speech_*.mp3
