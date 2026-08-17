@@ -1,15 +1,56 @@
-# VoiceAI1.0 - Voice Math Assistant
+# VoiceAI_math - 음성 기반 수학 도우미
 
+<<<<<<< HEAD
 음성으로 수학 개념을 질문하고 답변받는 AI 기반 음성 비서 입니다.
+=======
+음성으로 수학 개념을 질문하고, 답을 듣고, 필요한 경우 예시까지 음성으로 전달하는 AI 기반 수학 어시스턴트입니다.
+>>>>>>> 696a771 (Update README with project flowchart)
 
 ## 📋 프로젝트 개요
 
-- **음성 입력**: 마이크로 녹음한 음성을 텍스트로 변환 (STT)
-- **방언 정규화**: 경상도 억양/사투리를 표준 한국어로 변환
-- **수학 데이터베이스**: math.json에서 수학 개념 검색
-- **AI 응답**: GPT-5.6-Luna 모델을 사용한 답변
-- **음성 출력**: 답변을 음성으로 변환 및 재생 (TTS)
-- **MCP 통합**: Model Context Protocol을 통한 파일시스템 접근
+- **음성 입력**: 마이크로 녹음한 음성을 텍스트로 변환합니다.
+- **방언 정규화**: 경상도 억양이나 사투리를 표준 한국어로 정리합니다.
+- **수학 데이터베이스 검색**: `math_json/math.json`에서 해당 용어를 찾습니다.
+- **AI 응답 생성**: 수학 용어가 없거나 설명이 부족하면 GPT 기반 응답을 생성합니다.
+- **TTS 출력**: 최종 답변을 음성으로 변환해 재생합니다.
+- **MCP 통합**: 파일 시스템 접근을 통해 프로젝트 내 데이터와 리소스를 활용합니다.
+
+### 🔄 전체 실행 흐름
+
+```mermaid
+flowchart TD
+    A[프로그램 실행] --> B[마이크 녹음]
+    B --> C[STT 변환]
+    C --> D[방언 정규화]
+    D --> E{수학 용어 매칭}
+    E -- 예 --> F[math.json에서 의미 찾기]
+    E -- 아니오 --> G[GPT 답변 생성]
+    F --> H[응답 문장 준비]
+    G --> H
+    H --> I[TTS 변환]
+    I --> J[음성 재생]
+    J --> K[종료]
+```
+
+### 📁 파일 단위 구조도
+
+```text
+voice_math/
+├── total_mic_speak_mcp.py     # 메인 실행 파일, 전체 음성 처리 파이프라인 제어
+├── voice.py                   # 녹음, STT, TTS, 스피커 재생, 방언 정규화
+├── chatgpt_conn.py            # OpenAI Responses API 호출
+├── transcribe_conn.py         # STT 전용 함수 모듈
+├── tts_conn.py                # TTS 전용 함수 모듈
+├── requirements.txt           # 프로젝트 의존성 목록
+├── .env                       # OpenAI API Key 저장
+├── README.md                  # 프로젝트 설명 및 실행 가이드
+├── math_json/
+│   └── math.json              # 수학 개념 정보 저장소
+├── speech_transcribe.wav      # 녹음된 음성 파일
+├── speech_tts.mp3             # 생성된 답변 음성 파일
+├── venv/                      # Python 가상환경
+└── .gitignore                 # Git 업로드 제외 파일 목록
+```
 
 ---
 
