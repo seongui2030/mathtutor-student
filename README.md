@@ -17,17 +17,17 @@
 
 ```mermaid
 flowchart TD
-    A[프로그램 실행] --> B[마이크 녹음]
-    B --> C[STT 변환]
-    C --> D[방언 정규화]
-    D --> E{수학 용어 매칭}
-    E -- 예 --> F[math.json에서 의미 찾기]
-    E -- 아니오 --> G[GPT 답변 생성]
-    F --> H[응답 문장 준비]
-    G --> H
-    H --> I[TTS 변환]
-    I --> J[음성 재생]
-    J --> K[종료]
+    A["프로그램 실행<br/>python total_mic_speak_mcp.py<br/>if __name__ == '__main__'"] --> B["main()<br/>total_mic_speak_mcp.py"]
+    B --> C["record_audio_to_wav()<br/>voice.py / total_mic_speak_mcp.py"]
+    C --> D["call_transcribe()<br/>voice.py"]
+    D --> E["normalize_dialect()<br/>voice.py"]
+    E --> F{"input_guardrail()<br/>math_json/math.json"}
+    F -- 매칭됨 --> G["subject_meaning / example<br/>math.json 기반 응답"]
+    F -- 미매칭 --> H["call_chatgpt()<br/>chatgpt_conn.py"]
+    G --> I["call_tts()<br/>voice.py"]
+    H --> I
+    I --> J["play_mp3()<br/>voice.py"]
+    J --> K["종료"]
 ```
 
 ### 📁 파일 단위 구조도
