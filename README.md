@@ -83,7 +83,7 @@ voice_math/
     - 설치 첫 화면: **체크박스** 체크 하여 설치하기
 ---
 ### 💩 깃 저장소 VoiceAI_mat 소스코드를 내 컴퓨터에 복제하는 순서:
-- 명령프롬프트 실행 > git clone 명령어 > cd 명령어 > VSCode 실행
+1. 명령프롬프트 실행 > git clone 명령어 > cd 명령어 > VSCode 실행
 
 ```cmd
 git clone https://github.com/seongui2030/VoiceAI_math.git
