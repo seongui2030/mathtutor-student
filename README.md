@@ -14,22 +14,7 @@
 - **MCP 통합**: 파일 시스템 접근을 통해 프로젝트 내 데이터와 리소스를 활용합니다.
 
 ### 🔄 전체 실행 흐름
-
-```mermaid
-flowchart TD
-    A[프로그램 실행] --> B[마이크 녹음]
-    B --> C[STT 변환]
-    C --> D[방언 정규화]
-    D --> E{수학 용어 매칭}
-    E -- 예 --> F[math.json에서 의미 찾기]
-    E -- 아니오 --> G[GPT 답변 생성]
-    F --> H[응답 문장 준비]
-    G --> H
-    H --> I[TTS 변환]
-    I --> J[음성 재생]
-    J --> K[종료]
-npx -y @mermaid-js/mermaid-cli -i assets/voiceai_flowchart.mmd -o assets/voiceai_flowchart.png
-```
+![VoiceAI_math 실행 흐름](assets/voiceai_flowchart.png)
 
 ### 📁 파일 단위 구조도
 
