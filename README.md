@@ -2,6 +2,7 @@
 
 음성으로 수학 개념을 질문하고 답변받는 AI 기반 음성 비서 입니다.
 음성으로 수학 개념을 질문하고, 답을 듣고, 필요한 경우 예시까지 음성으로 전달하는 AI 기반 수학 어시스턴트입니다.
+이 책은 학생들이 수학 용어의 한자어 의미를 이해하지 못해 수학에 대한 자신감을 잃는 문제를 해결하기 위해 개발된 AI 기반 음성 학습 프로젝트를 소개합니다. 마이크로 녹음된 음성을 텍스트로 변환하고, 경상도 사투리와 같은 발음을 표준어로 정리한 뒤, 수학 용어 사전인 math.json과 GPT를 활용해 질문에 대한 뜻과 예시를 찾고, 최종 답변을 음성으로 다시 들려줍니다. 학생은 “한자어 수학 용어를 음성으로 묻고, 바로 답을 듣는 방식”으로 수학을 더 쉽게 이해하고 참여할 수 있으며, 이는 일반계 고등학교 1학년 **인공지능 기초** 교과목 단원4에서  SDGs 4. 양질의 교육을 실현하는 문제를 해결하기 위해 음성으로 수학 개념을 질문하고, 답을 듣고, 예제까지 전달하는 AI 기반 수학 비서 입니다.
 
 ## 📋 프로젝트 개요
 
@@ -81,7 +82,8 @@ voice_math/
     - [VSCode 다운로드](https://code.visualstudio.com/download?_exp_download=fb315fc982)
     - 설치 첫 화면: **체크박스** 체크 하여 설치하기
 ---
-### 💩 명령프롬프트 실행 > git clone 명령어 > cd 명령어 > VSCode 실행
+### 💩 깃 저장소 VoiceAI_mat 소스코드를 내 컴퓨터에 복제하는 순서:
+1. 명령프롬프트 실행 > git clone 명령어 > cd 명령어 > VSCode 실행
 
 ```cmd
 git clone https://github.com/seongui2030/VoiceAI_math.git
@@ -173,6 +175,13 @@ python total_mic_speak_mcp.py
 
 ## 🛠️ 트러블슈팅
 
+### ❌ "Updates were rejected..." 오류
+**해결:**
+```bash
+git add .
+git rebase --continue
+git push -u origin main
+```
 ### ❌ "npx is not installed" 오류
 **해결:**
 ```bash
@@ -241,3 +250,4 @@ output_text = await run(server, input_text, model_name="gpt-4-turbo")
 ## 📞 지원
 
 [문제가 발생하거나 개선 사항이 있으면 이슈를 등록해주세요.](mailto: 2026oooooo@gmail.com)
+- 김천 "성의고등학교" 정보•컴퓨터 교사 이정원 입니다.
