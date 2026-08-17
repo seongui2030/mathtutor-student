@@ -1,4 +1,4 @@
-## VoiceAI_math - 음성 기반 수학 도우미
+## 수학 비서
 
 음성으로 수학 개념을 질문하고 답변받는 AI 기반 음성 비서 입니다.
 음성으로 수학 개념을 질문하고, 답을 듣고, 필요한 경우 예시까지 음성으로 전달하는 AI 기반 수학 어시스턴트입니다.
@@ -14,15 +14,9 @@
 - **MCP 통합**: 파일 시스템 접근을 통해 프로젝트 내 데이터와 리소스를 활용합니다.
 
 #### 🔄 전체 실행 흐름
-![VoiceAI_math 실행 흐름](assets/voiceai_flowchart.png)
+![수학 비서 실행 흐름](assets/voiceai_flowchart.png)
 
-<<<<<<< HEAD
-![VoiceAI_math 실행 흐름](assets/voiceai_flowchart.png)
-
-### 📁 파일 단위 구조도
-=======
 #### 📁 파일 단위 구조도
->>>>>>> ac95519d574c55e79133131479a52e00ba8b36c8
 
 ```text
 voice_math/
@@ -74,7 +68,7 @@ voice_math/
     - [VSCode 다운로드](https://code.visualstudio.com/download?_exp_download=fb315fc982)
     - 설치 첫 화면: **체크박스** 체크 하여 설치하기
 ---
-#### 💩 깃 저장소 VoiceAI_mat 소스코드를 내 컴퓨터에 복제하는 순서:
+#### 💩 깃 저장소 수학 비서 소스코드를 내 컴퓨터에 복제하는 순서:
 1. 명령프롬프트 실행 > git clone 명령어 > cd 명령어 > VSCode 실행
 
 ```cmd
