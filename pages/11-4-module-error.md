@@ -1,4 +1,4 @@
-# 11-4. 모듈 오류
+##11-4. 모듈 오류
 
 실행 중 `ModuleNotFoundError` 또는 import 오류가 발생하면 Python 의존성을 다시 설치해야 합니다.
 

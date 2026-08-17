@@ -2,7 +2,7 @@ from pathlib import Path
 from openai import OpenAI
 from dotenv import load_dotenv
 
-# Lazy client initialization to allow callers to load .env first
+##Lazy client initialization to allow callers to load .env first
 _client = None
 
 def get_client():
@@ -13,7 +13,7 @@ def get_client():
     return _client
 
 
-# API연결하는 함수를 만듬. 입력값은 오디오 파일 경로, 입력 텍스트, 모델명은 gpt-4o-mini-tts
+##API연결하는 함수를 만듬. 입력값은 오디오 파일 경로, 입력 텍스트, 모델명은 gpt-4o-mini-tts
 def call_tts(speech_file_path: str, input_text: str, model_name: str = "gpt-4o-mini-tts") -> str:
     client = get_client()
     try:

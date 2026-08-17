@@ -11,7 +11,7 @@ from chatgpt_conn import call_chatgpt
 
 load_dotenv()
 
-# Lazy OpenAI client
+##Lazy OpenAI client
 _client = None
 
 def get_client():

@@ -1,4 +1,4 @@
-# 04-2. WAV 저장
+## 04-2. WAV 저장
 
 녹음이 끝나면 `write(audio_path, sample_rate, audio)`에 의해 WAV 파일이 저장됩니다.
 

@@ -1,4 +1,4 @@
-# 08-1. OpenAI 응답 API
+##08-1. OpenAI 응답 API
 
 `chatgpt_conn.py`는 OpenAI의 응답 API를 통해 텍스트 추론 결과를 받습니다.
 

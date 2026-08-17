@@ -1,4 +1,4 @@
-# 07-1. math.json 검색
+##07-1. math.json 검색
 
 `input_guardrail()`는 현재 디렉터리의 `math_json/math.json`을 열어 데이터를 로드합니다.
 
