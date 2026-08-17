@@ -33,14 +33,28 @@
     ```
 - **마이크 설정**
     - 마이크 개인 정보 설정 > 마이크 접근 **켬**, 앱에서 마이크 액세서하도록 허용 **켬**, 데스크놉 앱이 마이크에 액세스 하도록 허용 **켬**
+- **git 설치**
+    - [git 다운로드 > Git for Windows/x64 Setup](https://git-scm.com/install/windows)
+    ```bash
+    git version
+    ```
 
 - **Visual Studio Code**
     - [VSCode 다운로드](https://code.visualstudio.com/download?_exp_download=fb315fc982)
     - 설치 첫 화면: **체크박스** 체크 하여 설치하기
 ---
+### 💩 명령프롬프트 실행 > git clone 명령어 > cd 명령어 > VSCode 실행
 
+```cmd
+git clone https://github.com/seongui2030/VoiceAI_math.git
+
+cd voiceai_math
+
+code .
+```
+---
 ### 2️⃣ 파이썬 의존성 설치
-1. 프로젝트 디렉토리 만들기 > 프로젝트 디렉토리 > 우클릭 > VSCode로 열기
+
 2. 터미널 열기(crtl+`)
 3. +기호옆에 **Lauch Profile...** > Select Default Profile > **Command Prompt** 클릭
 
