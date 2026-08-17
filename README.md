@@ -249,3 +249,4 @@ output_text = await run(server, input_text, model_name="gpt-4-turbo")
 ## 📞 지원
 
 [문제가 발생하거나 개선 사항이 있으면 이슈를 등록해주세요.](mailto: 2026oooooo@gmail.com)
+- 김천 "성의고등학교" 정보•컴퓨터 교사 이정원 입니다.
