@@ -1,10 +1,10 @@
-# VoiceAI_math - 음성 기반 수학 도우미
+## VoiceAI_math - 음성 기반 수학 도우미
 
 음성으로 수학 개념을 질문하고 답변받는 AI 기반 음성 비서 입니다.
 음성으로 수학 개념을 질문하고, 답을 듣고, 필요한 경우 예시까지 음성으로 전달하는 AI 기반 수학 어시스턴트입니다.
 이 책은 학생들이 수학 용어의 한자어 의미를 이해하지 못해 수학에 대한 자신감을 잃는 문제를 해결하기 위해 개발된 AI 기반 음성 학습 프로젝트를 소개합니다. 마이크로 녹음된 음성을 텍스트로 변환하고, 경상도 사투리와 같은 발음을 표준어로 정리한 뒤, 수학 용어 사전인 math.json과 GPT를 활용해 질문에 대한 뜻과 예시를 찾고, 최종 답변을 음성으로 다시 들려줍니다. 학생은 “한자어 수학 용어를 음성으로 묻고, 바로 답을 듣는 방식”으로 수학을 더 쉽게 이해하고 참여할 수 있으며, 이는 일반계 고등학교 1학년 **인공지능 기초** 교과목 단원4에서  SDGs 4. 양질의 교육을 실현하는 문제를 해결하기 위해 음성으로 수학 개념을 질문하고, 답을 듣고, 예제까지 전달하는 AI 기반 수학 비서 입니다.
 
-## 📋 프로젝트 개요
+### 📋 프로젝트 개요
 
 - **음성 입력**: 마이크로 녹음한 음성을 텍스트로 변환합니다.
 - **방언 정규화**: 경상도 억양이나 사투리를 표준 한국어로 정리합니다.
@@ -13,10 +13,10 @@
 - **TTS 출력**: 최종 답변을 음성으로 변환해 재생합니다.
 - **MCP 통합**: 파일 시스템 접근을 통해 프로젝트 내 데이터와 리소스를 활용합니다.
 
-### 🔄 전체 실행 흐름
+#### 🔄 전체 실행 흐름
 ![VoiceAI_math 실행 흐름](assets/voiceai_flowchart.png)
 
-### 📁 파일 단위 구조도
+#### 📁 파일 단위 구조도
 
 ```text
 voice_math/
@@ -38,9 +38,9 @@ voice_math/
 
 ---
 
-## 🚀 설치 및 실행 절차
+### 🚀 설치 및 실행 절차
 
-### 1️⃣ 사전 요구사항
+#### 1️⃣ 사전 요구사항
 
 다음을 설치해야 합니다:
 
@@ -68,7 +68,7 @@ voice_math/
     - [VSCode 다운로드](https://code.visualstudio.com/download?_exp_download=fb315fc982)
     - 설치 첫 화면: **체크박스** 체크 하여 설치하기
 ---
-### 💩 깃 저장소 VoiceAI_mat 소스코드를 내 컴퓨터에 복제하는 순서:
+#### 💩 깃 저장소 VoiceAI_mat 소스코드를 내 컴퓨터에 복제하는 순서:
 1. 명령프롬프트 실행 > git clone 명령어 > cd 명령어 > VSCode 실행
 
 ```cmd
@@ -79,7 +79,7 @@ cd voiceai_math
 code .
 ```
 ---
-### 2️⃣ 파이썬 의존성 설치
+#### 2️⃣ 파이썬 의존성 설치
 
 2. 터미널 열기(crtl+`)
 3. +기호옆에 **Lauch Profile...** > Select Default Profile > **Command Prompt** 클릭
@@ -104,7 +104,7 @@ pip install -r requirements.txt
 
 ---
 
-### 3️⃣ 환경변수 설정
+#### 3️⃣ 환경변수 설정
 
 5. 프로젝트 루트 디렉토리에 `.env` 파일을 생성하고 다음 정보를 입력합니다:
 
@@ -116,7 +116,7 @@ OPENAI_API_KEY=your_openai_api_key_here
 
 ---
 
-### 4️⃣ 파일 구조 확인
+#### 4️⃣ 파일 구조 확인
 
 6. 다음 파일들이 올바른 위치에 있는지 확인합니다:
 
@@ -135,7 +135,7 @@ voice_math/
 
 ---
 
-### 5️⃣ total_mic_speak_mcp.py 실행
+#### 5️⃣ total_mic_speak_mcp.py 실행
 
 7. 프로젝트 디렉토리에서 다음 명령어를 실행합니다:
 
@@ -159,41 +159,41 @@ python total_mic_speak_mcp.py
 
 ---
 
-## 🛠️ 트러블슈팅
+### 🛠️ 트러블슈팅
 
-### ❌ "Updates were rejected..." 오류
+#### ❌ "Updates were rejected..." 오류
 **해결:**
 ```bash
 git add .
 git rebase --continue
 git push -u origin main
 ```
-### ❌ "npx is not installed" 오류
+#### ❌ "npx is not installed" 오류
 **해결:**
 ```bash
 npm install -g npx
 ```
 또는 Node.js를 재설치하세요.
 
-### ❌ "OPENAI_API_KEY" 오류
+#### ❌ "OPENAI_API_KEY" 오류
 **해결:**
 - `.env` 파일이 프로젝트 루트에 있는지 확인
 - `.env` 파일에 올바른 API 키가 입력되어 있는지 확인
 - 또는 시스템 환경변수 설정:
   ```bash
-  # Windows (PowerShell)
+  ## Windows (PowerShell)
   $env:OPENAI_API_KEY = "your_api_key"
   
-  # Linux/Mac
+  ## Linux/Mac
   export OPENAI_API_KEY="your_api_key"
   ```
 
-### ❌ 마이크 오류
+#### ❌ 마이크 오류
 **해결:**
 - 시스템 사운드 설정에서 마이크가 활성화되어 있는지 확인
 - 다른 애플리케이션이 마이크를 사용 중이지 않은지 확인
 
-### ❌ "ModuleNotFoundError" 오류
+#### ❌ "ModuleNotFoundError" 오류
 **해결:**
 ```bash
 pip install --upgrade -r requirements.txt
@@ -201,7 +201,7 @@ pip install --upgrade -r requirements.txt
 
 ---
 
-## 📁 주요 파일 설명
+### 📁 주요 파일 설명
 
 | 파일명 | 목적 |
 |--------|------|
@@ -214,26 +214,26 @@ pip install --upgrade -r requirements.txt
 
 ---
 
-## 🔧 커스터마이징
+### 🔧 커스터마이징
 
-### 녹음 시간 조정
+#### 녹음 시간 조정
 `total_mic_speak_mcp.py`에서:
 ```python
 def record_audio_to_wav(audio_path: Path, duration: int = 10, ...):
-    # duration 값을 원하는 초로 변경 (기본값: 10초)
+    ## duration 값을 원하는 초로 변경 (기본값: 10초)
 ```
 
-### 다른 GPT 모델 사용
+#### 다른 GPT 모델 사용
 ```python
 output_text = await run(server, input_text, model_name="gpt-4-turbo")
 ```
 
-### math.json 업데이트
+#### math.json 업데이트
 `math_json/math.json` 파일을 편집하여 새로운 수학 개념 추가 가능
 
 ---
 
-## 📞 지원
+### 📞 지원
 
-[문제가 발생하거나 개선 사항이 있으면 이슈를 등록해주세요.](mailto: 2026oooooo@gmail.com)
-- 김천 "성의고등학교" 정보•컴퓨터 교사 이정원 입니다.
+[문제가 발생하거나 개선 사항이 있으면 이슈를 등록해주세요.](mailto: seongui2030@gmail.com)
+- 경북교육청 **성의고등학교** 정보•컴퓨터 교사 이정원 입니다.
