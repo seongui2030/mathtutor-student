@@ -175,6 +175,13 @@ python total_mic_speak_mcp.py
 
 ## 🛠️ 트러블슈팅
 
+### ❌ "Updates were rejected..." 오류
+**해결:**
+```bash
+git add .
+git rebase --continue
+git push -u origin main
+```
 ### ❌ "npx is not installed" 오류
 **해결:**
 ```bash
