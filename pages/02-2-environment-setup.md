@@ -10,7 +10,7 @@ OPENAI_API_KEY=your_openai_api_key_here
 
 이 파일은 `load_dotenv()`를 통해 로드됩니다. 각 모듈은 `.env`를 통해 환경 변수를 가져와 OpenAI 클라이언트를 초기화합니다.
 
-## 추가 확인 사항
+### 추가 확인 사항
 
 - `.env` 파일 위치가 프로젝트 루트인지 확인한다.
 - API 키 값이 정확한지 확인한다.
