@@ -1,4 +1,3 @@
-## 07-2. 의미와 예시 추출
 
 매칭이 되면 해당 `term`의 `subject_meaning`과 `example` 값을 추출합니다.
 

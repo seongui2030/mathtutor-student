@@ -1,4 +1,3 @@
-## 10-1. pygame 재생
 
 ```python
 def play_mp3(file_path: str):

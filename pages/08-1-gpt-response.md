@@ -1,4 +1,3 @@
-## 08-1. GPT 응답 생성
 
 `chatgpt_conn.py`는 OpenAI Responses API를 호출해 사용자 질문에 대한 자연어 설명을 생성합니다.
 
