@@ -1,7 +1,7 @@
 ﻿# 목차
 
 - [01. 프로젝트 개요](pages/01-project-overview.md)
-  - [01-1. 개발 배경 및 동기 (Background & Motivation)](pages/01-1-project-notivation.md)
+  - [01-1. 개발 배경 및 동기](pages/01-1-project-notivation.md)
   - [01-2. 핵심 기능 소개](pages/01-2-core-features.md)
 - [02. 설치 및 준비](pages/02-installation.md)
   - [02-1. 사전 요구사항](pages/02-1-prerequisites.md)
