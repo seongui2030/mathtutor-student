@@ -63,7 +63,7 @@ def call_transcribe(audio_path: Path, model_name: str = STT_MODEL) -> str:
 
 def normalize_dialect(input_text: str,
                       model_name: str = NORMALIZE_MODEL) -> str:
-    """사투리나 구어체 질문을 math.json 검색에 적합한 표준어로 바꿉니다."""
+    """사투리나 구햣어체 질문을 math.json 검색에 적합한 표준어로 바꿉니다."""
     text = input_text.strip()
     if not text:
         return text
