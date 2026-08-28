@@ -2,9 +2,36 @@
 
 음성으로 수학 개념을 질문하고 답변받는 AI 기반 음성 비서 입니다.
 음성으로 수학 개념을 질문하고, 답을 듣고, 필요한 경우 예시까지 음성으로 전달하는 AI 기반 수학 어시스턴트입니다.
-이 책은 학생들이 수학 용어의 한자어 의미를 이해하지 못해 수학에 대한 자신감을 잃는 문제를 해결하기 위해 개발된 AI 기반 음성 학습 프로젝트를 소개합니다. 마이크로 녹음된 음성을 텍스트로 변환하고, 경상도 사투리와 같은 발음을 표준어로 정리한 뒤, 수학 용어 사전인 math.json과 GPT를 활용해 질문에 대한 뜻과 예시를 찾고, 최종 답변을 음성으로 다시 들려줍니다. 학생은 “한자어 수학 용어를 음성으로 묻고, 바로 답을 듣는 방식”으로 수학을 더 쉽게 이해하고 참여할 수 있으며, 이는 일반계 고등학교 1학년 **인공지능 기초** 교과목 단원4에서  SDGs 4. 양질의 교육을 실현하는 문제를 해결하기 위해 음성으로 수학 개념을 질문하고, 답을 듣고, 예제까지 전달하는 AI 기반 수학 비서 입니다.
 
-### 📋 프로젝트 개요
+이 책은 학생들이 수학 용어의 한자어 의미를 이해하지 못해 수학에 대한 자신감을 잃는 문제를 해결하기 위해 개발된 AI 기반 음성 학습 프로젝트를 소개합니다. 
+
+마이크로 녹음된 음성을 텍스트로 변환하고, 경상도 사투리와 같은 발음을 표준어로 정리한 뒤, 수학 용어 사전인 math.json과 GPT를 활용해 질문에 대한 뜻과 예시를 찾고, 최종 답변을 음성으로 다시 들려줍니다. 
+
+학생들은 한자어 수학 용어를 음성으로 질문하고 즉시 설명을 들으며 수학 개념을 더 쉽게 이해할 수 있습니다. 이 프로젝트는 일반계 고등학교 1학년 인공지능 기초 교과목 단원 4의 학습 활동과 연계하여, SDGs 4. 양질의 교육 실현에 기여하고자 개발한 AI 기반 수학 비서입니다. 수학 개념의 의미와 예시를 음성으로 제공하여 학생들의 학습 참여와 이해를 돕습니다.
+
+## voice_math.py 실행에 필요한 파일은 다음과 같습니다.
+필수 파일:
+- voice_math.py
+- math_json/math.json
+- .env
+    - OPENAI_API_KEY가 시스템 환경변수에 있으면 .env 가 필요 없습니다.
+
+필수 외부 환경:
+- Python 가상환경
+- openai
+- openai-agents
+- python-dotenv
+- pygame
+- sounddevice
+- scipy
+- Node.js와 npx
+- MCP filesystem 패키지
+    - @modelcontextprotocol/server-filesystem 자동 생성되는 폴더와 파일:
+        - audio/
+          - audio/speech_transcribe.wav
+          - audio/speech_tts.mp3
+
+## 📋 프로젝트 개요
 
 - **음성 입력**: 마이크로 녹음한 음성을 텍스트로 변환합니다.
 - **방언 정규화**: 경상도 억양이나 사투리를 표준 한국어로 정리합니다.
@@ -13,34 +40,13 @@
 - **TTS 출력**: 최종 답변을 음성으로 변환해 재생합니다.
 - **MCP 통합**: 파일 시스템 접근을 통해 프로젝트 내 데이터와 리소스를 활용합니다.
 
-#### 🔄 전체 실행 흐름
-![수학 비서 실행 흐름](assets/voiceai_flowchart.png)
+## 🔄 전체 실행 흐름
+![수학 비서 실행 흐름](./assets/voice_math.png)
 
-#### 📁 파일 단위 구조도
 
-```text
-voice_math/
-├── total_mic_speak_mcp.py     # 메인 실행 파일, 전체 음성 처리 파이프라인 제어
-├── voice.py                   # 녹음, STT, TTS, 스피커 재생, 방언 정규화
-├── chatgpt_conn.py            # OpenAI Responses API 호출
-├── transcribe_conn.py         # STT 전용 함수 모듈
-├── tts_conn.py                # TTS 전용 함수 모듈
-├── requirements.txt           # 프로젝트 의존성 목록
-├── .env                       # OpenAI API Key 저장
-├── README.md                  # 프로젝트 설명 및 실행 가이드
-├── math_json/
-│   └── math.json              # 수학 개념 정보 저장소
-├── speech_transcribe.wav      # 녹음된 음성 파일
-├── speech_tts.mp3             # 생성된 답변 음성 파일
-├── venv/                      # Python 가상환경
-└── .gitignore                 # Git 업로드 제외 파일 목록
-```
+## 🚀 설치 및 실행 절차
 
----
-
-### 🚀 설치 및 실행 절차
-
-#### 1️⃣ 사전 요구사항
+### 1️⃣ 준비물: 프로그램 설치
 
 다음을 설치해야 합니다:
 
@@ -63,18 +69,17 @@ voice_math/
     ```bash
     git version
     ```
-
 - **Visual Studio Code**
     - [VSCode 다운로드](https://code.visualstudio.com/download?_exp_download=fb315fc982)
     - 설치 첫 화면: **체크박스** 체크 하여 설치하기
----
-#### 💩 깃 저장소 수학 비서 소스코드를 내 컴퓨터에 복제하는 순서:
-1. 명령프롬프트 실행 > git clone 명령어 > cd 명령어 > VSCode 실행
 
-```cmd
-git clone https://github.com/seongui2030/VoiceAI_math.git
+### 💩 깃 저장소 수학 비서 소스코드를 내 컴퓨터에 복제하는 순서:
+1. 파워쉘 실행 > git clone 명령어 > cd 명령어 > VSCode 실행
 
-cd voiceai_math
+```bash
+git clone https://github.com/seongui2030/mathtutor-student.git
+
+cd mathtutor-student
 
 code .
 ```
@@ -108,39 +113,57 @@ pip install -r requirements.txt
 
 5. 프로젝트 루트 디렉토리에 `.env` 파일을 생성하고 다음 정보를 입력합니다:
 
-```env
+```.env
 OPENAI_API_KEY=your_openai_api_key_here
 ```
-
 **또는** 이미 시스템 환경변수로 `OPENAI_API_KEY`가 설정되어 있다면 건너뛸 수 있습니다.
+
+- [OpenAI_API_KEY 키 생성](https://platform.openai.com/api-keys)
+- [OpenAI_API_SDKs and CLI](https://developers.openai.com/api/docs/libraries)
 
 ---
 
 #### 4️⃣ 파일 구조 확인
 
-6. 다음 파일들이 올바른 위치에 있는지 확인합니다:
+6. `voice_math.py`는 다음 함수 단위로 동작합니다:
 
-```
-voice_math/
-├── total_mic_speak_mcp.py    ⭐ 메인 실행 파일
-├── voice.py                   (음성 처리 모듈)
-├── chatgpt_conn.py            (GPT API 연결)
-├── transcribe_conn.py         (음성 인식)
-├── tts_conn.py                (음성 합성)
-├── requirements.txt           (의존성)
-├── .env                       (환경변수)
-└── math_json/
-    └── math.json              (수학 개념 데이터베이스)
+```text
+record_audio_to_wav()
+└─ 마이크로 수학 질문을 녹음하고 WAV 파일로 저장
+
+call_transcribe()
+└─ 저장된 WAV 파일을 음성 인식 API로 보내 텍스트로 변환
+
+normalize_dialect()
+└─ 사투리·구어체 질문을 math.json 검색에 적합한 표준어로 정규화
+
+main_mcp()
+└─ MCP filesystem 서버를 실행하고 수학 에이전트(run()) 호출
+   └─ run()
+      └─ math.json을 참조해 질문에 대한 수학 답변 생성
+
+text_for_speech()
+└─ 에이전트 답변에서 예시를 제외하고 음성 출력용 문장으로 정리
+
+call_tts()
+└─ 정리된 답변을 MP3 음성 파일로 변환
+
+play_mp3()
+└─ 생성된 MP3 파일을 스피커로 재생
+
+main()
+└─ 녹음 → 음성 인식 → 질문 정규화 → 수학 답변 생성
+   → 음성 합성 → 음성 재생의 전체 흐름 실행
 ```
 
 ---
 
-#### 5️⃣ total_mic_speak_mcp.py 실행
+#### 5️⃣ voice_math.py 실행
 
 7. 프로젝트 디렉토리에서 다음 명령어를 실행합니다:
 
 ```bash
-python total_mic_speak_mcp.py
+python voice_math.py
 ```
 
 ---
@@ -198,21 +221,6 @@ npm install -g npx
 ```bash
 pip install --upgrade -r requirements.txt
 ```
-
----
-
-### 📁 주요 파일 설명
-
-| 파일명 | 목적 |
-|--------|------|
-| `total_mic_speak_mcp.py` | 메인 실행 파일 - 전체 음성 처리 파이프라인 |
-| `voice.py` | 음성 녹음, STT, TTS, 음성 재생 관련 함수 |
-| `chatgpt_conn.py` | OpenAI API를 통한 GPT 모델 호출 |
-| `transcribe_conn.py` | Whisper를 사용한 음성 인식 (STT) |
-| `tts_conn.py` | TTS 엔진을 통한 음성 합성 |
-| `math_json/math.json` | 수학 개념 데이터베이스 (word, subject_meaning, example) |
-
----
 
 ### 🔧 커스터마이징
 

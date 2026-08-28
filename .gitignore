@@ -7,8 +7,3 @@ __pycache__/
 .pytest_cache/
 speech_*.wav
 speech_*.mp3
-pages/
-TOC.md
-*.pyc
-speech_transcribe.wav
-speech_tts.mp3

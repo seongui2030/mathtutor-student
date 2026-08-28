@@ -1,0 +1,44 @@
+
+flowchart TD
+    A([시작<br/>python voice_math.py]) --> B{npx 설치 여부}
+    B -- 아니오 --> Z1[오류 메시지 출력<br/>npx 설치 안내]
+    B -- 예 --> C[main() 실행]
+
+    C --> D[마이크 녹음<br/>record_audio_to_wav()<br/>audio/speech_transcribe.wav 저장]
+    D --> E[음성 인식<br/>call_transcribe()<br/>STT 결과 생성]
+    E --> F{인식된 음성이<br/>비어 있는가?}
+    F -- 예 --> Z2[재시도 안내 출력]
+    F -- 아니오 --> G[방언 정규화<br/>normalize_dialect()<br/>사투리 → 표준 한국어]
+    G --> H{정규화 API 오류}
+    H -- 예 --> I[원문을 검색어로 사용]
+    H -- 아니오 --> J[정규화된 질문 사용]
+    I --> K
+    J --> K[MCP filesystem 서버 시작]
+
+    K --> L{math_json/math.json<br/>파일 존재 여부}
+    L -- 아니오 --> Z3[math.json 파일을<br/>읽을 수 없다고 응답]
+    L -- 예 --> M[Math Assistant 실행<br/>filesystem 도구로<br/>math_json/math.json 읽기]
+    M --> N{질문과 수학 용어<br/>일치 여부}
+    N -- 아니오 --> O["math.json 파일에<br/>해당 질문이 없습니다." 응답]
+    N -- 예 --> P[word, subject_meaning,<br/>example 등 확인]
+    P --> Q[최종 응답 생성<br/>질문은 용어<br/>수학적 의미<br/>예시 출력]
+    M -. MCP 오류 .-> Z3
+
+    O --> R
+    Q --> R
+    Z3 --> R[TTS용 문장 변환<br/>예시는 음성에서 제외<br/>중복 용어 제거]
+    R --> S[텍스트 → 음성<br/>call_tts()<br/>audio/speech_tts.mp3 저장]
+    S --> T[스피커 재생<br/>play_mp3()]
+    T --> U([종료])
+    Z1 --> U
+    Z2 --> U
+
+    classDef input fill:#e3f2fd,stroke:#1976d2,color:#0d47a1;
+    classDef mcp fill:#fff3e0,stroke:#ef6c00,color:#e65100;
+    classDef output fill:#e8f5e9,stroke:#388e3c,color:#1b5e20;
+    classDef error fill:#ffebee,stroke:#d32f2f,color:#b71c1c;
+
+    class D,E,G input;
+    class K,L,M,N,P mcp;
+    class Q,R,S,T output;
+    class Z1,Z2,Z3 error;
